@@ -162,7 +162,7 @@ class EC2Manager:
 
         # Dry run succeeded, run start_instances without dry run
         try:
-            response = self.ec2.start_instances(
+            self.ec2.start_instances(
                 InstanceIds=[self.settings.instance_id], DryRun=False
             )
         except ClientError as e:
@@ -193,7 +193,7 @@ class EC2Manager:
 
         # Dry run succeeded, run start_instances without dry run
         try:
-            response = self.ec2.stop_instances(
+            self.ec2.stop_instances(
                 InstanceIds=[self.settings.instance_id], DryRun=False
             )
         except ClientError as e:
