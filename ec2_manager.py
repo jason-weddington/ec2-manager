@@ -123,19 +123,21 @@ class EC2Manager:
         """
         Prints summary of EC2 instance details
         """
-        print(f"\nInstance Id: {instance.instance_id}")
+        print(instance.instance_id)
+        self.not_quiet("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         self.verbose_output(f"  AMI:         {instance.image_id}")
-        print(f"  Type:        {instance.instance_type}")
+        self.not_quiet(f"  Type:        {instance.instance_type}")
         self.verbose_output(f"  Launched:    {instance.launch_time}")
         self.verbose_output(f"  AZ:          {instance.availability_zone}")
         self.verbose_output(f"  Private DNS: {instance.private_dns_name}")
         self.verbose_output(f"  Public DNS:  {instance.public_dns_name}")
-        print(f"  Private IP:  {instance.private_ip_address}")
-        print(f"  Public IP:   {instance.public_ip_address}")
+        self.not_quiet(f"  Private IP:  {instance.private_ip_address}")
+        self.not_quiet(f"  Public IP:   {instance.public_ip_address}")
         self.verbose_output(f"  Subnet Id:   {instance.subnet_id}")
         self.verbose_output(f"  VPC Id:      {instance.vpc_id}")
-        print(f"  State:       {instance.state}")
+        self.not_quiet(f"  State:       {instance.state}")
         self.verbose_output(f"  Tags:        {instance.tags}")
+        print()
 
     def start(self):
         """
@@ -241,7 +243,7 @@ if __name__ == "__main__":
             quiet=args.get("--quiet"),
         )
         manager = EC2Manager(app_settings)
-        manager.not_quiet("\nInstances found in your AWS account:")
+        manager.not_quiet("Instances found in your AWS account:\n")
         all_instances = manager.list_instances()
         for i in all_instances:
             manager.print_instance_summary(instance=i)
