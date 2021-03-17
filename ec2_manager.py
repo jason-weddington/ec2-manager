@@ -3,8 +3,8 @@
 
 Requires Python 3.8+
 
-Simple script for starting and stopping EC2 instances. Requires that AWS credentials are
-already set up as described here:
+Simple script for listing, starting and stopping AWS EC2 instances.
+Requires that AWS credentials are already set up as described here:
 
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
 
@@ -137,7 +137,7 @@ class EC2Manager:
         self.verbose_output(f"  VPC Id:      {instance.vpc_id}")
         self.not_quiet(f"  State:       {instance.state}")
         self.verbose_output(f"  Tags:        {instance.tags}")
-        print()
+        self.not_quiet("\n")
 
     def start(self):
         """
