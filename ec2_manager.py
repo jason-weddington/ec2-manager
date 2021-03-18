@@ -73,7 +73,7 @@ class EC2Manager:
     def settings(self):
         return self._settings
 
-    def list_instances(self) -> list[EC2Instance]:
+    def list_instances(self) -> List[EC2Instance]:
         """
         Lists all registered EC2 instances
         """
