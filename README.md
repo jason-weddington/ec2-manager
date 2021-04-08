@@ -15,9 +15,9 @@ Options:
   --quiet                   Print less text
   --verbose                 Print more text
   
-Example:
+***Example:***
 
-'''
+```
 $ ec2_manager --list
 Instances found in your AWS account:
 
@@ -38,4 +38,4 @@ i-1234
 
 $ ec2_manager --start i-1234
 $ ec2_manager --stop i-1234
-'''
+```
