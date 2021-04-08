@@ -3,6 +3,7 @@
 This simple script can list, start, and stop EC2 instances on your AWS account. The script requires that AWS credentials are already set up as described here:
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
 
+```
 Usage:
   ec2_manager.py (--list | --start INSTANCE | --stop INSTANCE) [ --quiet | --verbose] [--test]
 Options:
@@ -14,6 +15,7 @@ Options:
   --test                    Runs the program in test mode to check permissions. Does not stop or start instances.
   --quiet                   Print less text
   --verbose                 Print more text
+```
   
 ***Example:***
 
